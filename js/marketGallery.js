@@ -30,7 +30,7 @@ window.Gallery = {
         return `<div class="responsive">
                     <div class="gallery">
                     <a target="_blank" href=#>
-                      <img src=${media.imageUrl} alt="" width="600" height="400">
+                      <img src=${media.imageUrl} alt="" width="600" height="400" style="width:350px;height:250px;" class="center">
                     </a>
                     <div class="desc">${media.description}</div>
                     <button class="btn btn-light btn-sm btn-block"  data-media_id="${media.id}">Add to Testing Gallery</button>
@@ -47,7 +47,7 @@ window.Gallery = {
 
     showAlert: function () {
         $(document.body).append(`<div class="alert alert-success">
-        <strong>Success!</strong> Media added to Testing Gallery.
+        <strong>Success!</strong> Added to MyGallery.
         </div>`);
     },
 

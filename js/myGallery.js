@@ -1,6 +1,15 @@
 window.MyGallery = {
     API_BASE_URL: "http://localhost:8085",
 
+    runCv: function () {
+        $.ajax({
+            url: MyGallery.API_BASE_URL + "/my-gallery/",
+            method: "POST"
+        }).done(function () {
+            console.log("Running Python");
+        })
+    },
+
     getMyGallery: function () {
         let customerId = 40;
         $.ajax({
@@ -13,7 +22,7 @@ window.MyGallery = {
     },
 
     deleteMediaFromMyGallery: function (mediaId) {
-        var request = {
+        let request = {
             userId: 40,
             mediaId: mediaId
         };
@@ -34,17 +43,16 @@ window.MyGallery = {
         return `<div class="responsive">
                 <div class="gallery">
                   <a target="_blank" href=${media.imageUrl}>
-                    <img src=${media.imageUrl} alt="" width="600" height="400">
+                    <img src=${media.imageUrl} alt="" width="600px" height="400px" style="width:350px;height:250px;" class="center">
                   </a>
                   <div class="desc">${media.description}</div>
-                  <button type="button" id="run" class="
-                   btn-light btn-sm btn-block">Run CV Code</button>
+                  <button type="button" id="run" class="btn-light btn-sm btn-block" data-media_url="${media.imageUrl}>Run CV Code</button>
                   <button type="button" id="delete" class="btn btn-danger btn-sm btn-block" data-media_id="${media.id}">Remove</button>
                 </div></div>`
     },
 
     displayMyGallery: function (myGallery) {
-        var myGalleryHtml = "";
+        let myGalleryHtml = "";
 
         myGallery.forEach(oneMedia => myGalleryHtml += MyGallery.getMyMediaHtml(oneMedia));
 
@@ -60,8 +68,16 @@ window.MyGallery = {
         });
     },
 
+    runPyCv: function () {
+        $(".separator").delegate("#run", "click", function (event) {
+            event.preventDefault();
+
+            let imageURL = $(this).data("media_url");
+            MyGallery.runCv();
+        });
+    }
 };
 
 MyGallery.getMyGallery();
 MyGallery.bindEvents();
-
+MyGallery.runPyCv();
