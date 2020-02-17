@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {margin-top:70px;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+#myInput{
+  width: 99%;
+  margin-left: auto;
+  margin-right: auto;
+  position: sticky;
+  top: 70px;
+  background: white;
+  z-index: 10;
+}
+
+#myInput:hover{
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 7px #4EC3DC;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid #e7e7e7;
+}
+
+.gallery:focus {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 3px #4EC3DC;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out 0.1s;
+}
+
+.gallery:hover {
+    outline: none;
+    border-color: #9ecaed;
+    transform: scale(1.015);
+    transition: all 0.2s ease-in-out 0.1s;
+}
+
+</style>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse hidden-xs">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="personalGallery.html" id="cgvtElement">CGVT</a>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="personalGallery.html">MyGallery</a></li>
+        <li><a href="galleryMarket.html">Market</a></li>
+        <li><a href="myAccount.html">MyAccount</a></li>
+        <li><a href="help.html">Help</a></li>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <input class="form-control" id="myInput" type="text" placeholder="Search for a Category..">
+  <br>
+
+  <div  class="separator">
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="../static/images/GC.jpg">
+        <img src="../static/images/GC.jpg" alt="Photo" width="600" height="400">
+      </a>
+      <div class="desc">Canyon Sky Nature Infrastructure Trees</div>
+      <button type="button" id="run" class="btn btn-light btn-sm btn-block">Run CV Code</button>
+      <button type="button" id="delete" class="btn btn-danger btn-sm btn-block">Remove</button>
+    </div>
+  </div>
+
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="../static/images/GC1.jpg">
+        <img src="../static/images/GC1.jpg" alt="Photo" width="600" height="400">
+      </a>
+      <div class="desc">Sky Nature Trees Cars People</div>
+      <button type="button" id="run" class="btn btn-light btn-sm btn-block">Run CV Code</button>
+      <button type="button" id="delete" class="btn btn-danger btn-sm btn-block">Remove</button>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="../static/images/LT.jpg">
+        <img src="../static/images/LT.jpg" alt="Photo" width="600" height="400">
+      </a>
+      <div class="desc">Sky Nature Trees</div>
+      <button type="button" id="run" class="btn btn-light btn-sm btn-block">Run CV Code</button>
+      <button type="button" id="delete" class="btn btn-danger btn-sm btn-block">Remove</button>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="../static/images/NP.jpg">
+        <img src="../static/images/NP.jpg" alt="Photo" width="600" height="400">
+      </a>
+      <div class="desc">Lake Nature Trees People</div>
+      <button type="button" id="run" class="btn btn-light btn-sm btn-block">Run CV Code</button>
+      <button type="button" id="delete" class="btn btn-danger btn-sm btn-block">Remove</button>
+    </div>
+  </div>
+  </div></div>
+
+<div class="clearfix"></div>
+
+<br>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".gallery").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+<script src="../js/myGallery.js"></script>
+
+</body>
+</html>

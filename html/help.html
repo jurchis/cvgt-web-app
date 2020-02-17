@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {margin-top:70px;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.row{
+  z-index: -10;
+}
+
+.panel:hover > .panel-heading {
+    background-color: #77cdf2;
+    color: white;
+
+
+}
+
+.panel:hover{
+background-color:#F5F6FA;
+
+}
+
+</style>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse hidden-xs">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="personalGallery.html" id="cgvtElement">CGVT</a>
+      <ul class="nav navbar-nav">
+        <li><a href="personalGallery.html">MyGallery</a></li>
+        <li><a href="galleryMarket.html">Market</a></li>
+        <li><a href="myAccount.html">MyAccount</a></li>
+        <li class="active"><a href="help.html">Help</a></li>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+          <div class="panel panel-default">
+            <div class="panel-heading" style="text-align:center"><strong>Short Intro</strong></div>
+
+            <div class="panel-body">
+              The CVGT platform is a place where the Computer Vision enthusiasts and even experienced developers can test their CV algorithms. If you are in an early stage of your CV development or even in a most advanced phase, this is the right place for you. You can select in real time images or even video and just by a click of a button you can directly run the algorithms that you created on it. We know that confusion mattrices are the most reliable, but when you want to "see it with your own eyes" you will be glad to test your algotithms here. And maybe the most important phase is to check for improvements. On CGVT you will be able to see on actual images or videos where exactly you algorithm mistakes.
+          </div>
+          </div>
+
+    <div class="row">
+    <div class="col-sm-6">
+          <div class="panel panel-info">
+            <div class="panel-heading"><a href="personalGallery.html" style="color:black">MyGallery</a></div>
+            <div class="panel-body">
+              This is your play ground! As a user, on this page you will be able to run Computer Vision code directly on your interest selected photos or videos. In order to add more content, the just go into the <i><a href="galleryMarket.html" style="color:black">Market</a></i> page and select your needed media content. Also if done with some of the media, just hit the Delete button and the image will dissapear from the personal gallery.
+          </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+          <div class="panel panel-warning">
+            <div class="panel-heading"><a href="galleryMarket.html" style="color:black">Market</a></div>
+            <div class="panel-body">
+              Market is the place from where you can add as many images and videos as you like into your personal gallery! This page is refreshed daily with new content available to each user. You just enter the page, hit the Add to Testing Gallery Button and you will have the selected media in your personal gallery. Also, each content has a description that will let you select your content of interest.</div>
+          </div>
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading"><strong>More Details</strong></div>
+        <div class="panel-body">
+           <strong>CVGT Flow Chart</strong>
+          </br>
+          Below can be observed the Flow Chart of CGVT platform.
+        <br>
+        <img src="../static/graphics/flowChart.png" class="img-responsive center-block">
+        <br>
+        <p>
+          <strong>CVGT Endpoints</strong>
+         </br>
+          Each Endpoint is presented with its corresponding methods.
+        </p>
+        <img src="../static/graphics/flowTable.png" class="img-responsive center-block">
+        <br>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

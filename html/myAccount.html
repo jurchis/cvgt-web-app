@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+<style>
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {margin-top:70px;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.alert{
+  display:none;
+}
+
+.panel:hover > .panel-heading {
+  background-color: #77cdf2;
+  color: white;
+}
+
+.panel:hover{
+  background-color:#F5F6FA;
+}
+
+</style>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse hidden-xs">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="personalGallery.html" id="cgvtElement">CGVT</a>
+      <ul class="nav navbar-nav">
+        <li><a href="personalGallery.html">MyGallery</a></li>
+        <li><a href="galleryMarket.html">Market</a></li>
+        <li class="active"><a href="myAccount.html">MyAccount</a></li>
+        <li><a href="help.html">Help</a></li>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container">
+  <div  class="separator">
+<class="row">
+  <div class="col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-heading"><style="color:black">Account Information</div>
+          <div class="panel-body">
+            <form action="/action_page.php">
+            First name:<br>
+            <input type="text" name="firstname" value="Florin">
+            <br>
+            Last name:<br>
+            <input type="text" name="lastname" value="Jurchis">
+            <br>
+            Username:<br>
+            <input type="text" name="firstname" value="fjurchis" disabled>
+            <br>
+            Email:<br>
+            <input type="text" name="firstname" value="jurchis@gmail.com" disabled>
+            <br>
+            <br>
+            <input type="submit", value="Update">
+
+            <img src="../static/graphics/user.png" alt="User" height="240" width="180" style="margin-top:-200px; float:right; margin-right: 35px">
+
+            <div class="alert alert-success alert-dismissable">
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+           Success! Profile information updated with success.
+            </div>
+
+            </form>
+        </div>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading"><style="color:black">Password Reset</div>
+      <div class="panel-body">
+        <form action="/action_page.php">
+          Old Password:<br>
+          <input type="password" name="firstname">
+          <br>
+          New Password:<br>
+          <input type="password" name="lastname">
+          <br>
+          Confirm Password:<br>
+          <input type="password" name="firstname" >
+          <br><br><br><br>
+
+          <input type="submit", value="Reset">
+
+          <img src="../static/graphics/pass.png" alt="User" height="240" width="240" style="margin-top:-200px; float:right">
+
+          <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            Success! Profile information updated with success.
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<script>
+$("#btnShow").click(function(){
+
+  $(".alert").hide().show('medium');
+});
+</script>
+
+</body>
+</html>
