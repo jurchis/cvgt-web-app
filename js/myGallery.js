@@ -1,12 +1,20 @@
 window.MyGallery = {
     API_BASE_URL: "http://localhost:8085",
 
-    runCv: function () {
+    runCv: function (imageUrl) {
+        let request = {
+            userId: 40,
+            imageUrl: imageUrl
+        };
+
         $.ajax({
             url: MyGallery.API_BASE_URL + "/my-gallery/",
-            method: "POST"
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(request)
         }).done(function () {
-            console.log("Running Python");
+            console.log("Run CV");
+            console.log(request);
         })
     },
 
@@ -46,7 +54,7 @@ window.MyGallery = {
                     <img src=${media.imageUrl} alt="" width="600px" height="400px" style="width:350px;height:250px;" class="center">
                   </a>
                   <div class="desc">${media.description}</div>
-                  <button type="button" id="run" class="btn-light btn-sm btn-block" data-media_url="${media.imageUrl}>Run CV Code</button>
+                  <button type="button" id="run" class="btn-light btn-sm btn-block" data-media_url="${media.imageUrl}">Run CV Code</button>
                   <button type="button" id="delete" class="btn btn-danger btn-sm btn-block" data-media_id="${media.id}">Remove</button>
                 </div></div>`
     },
@@ -72,8 +80,9 @@ window.MyGallery = {
         $(".separator").delegate("#run", "click", function (event) {
             event.preventDefault();
 
-            let imageURL = $(this).data("media_url");
-            MyGallery.runCv();
+            let imageUrl = $(this).data("media_url");
+            MyGallery.runCv(imageUrl);
+            console.log(imageUrl)
         });
     }
 };
