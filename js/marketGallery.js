@@ -45,12 +45,24 @@ window.Gallery = {
         $(".separator").html(mediasHtml);
     },
 
+    showAlert: function () {
+        $(document.body).append(`<div class="alert alert-success">
+        <strong>Success!</strong> Media added to Testing Gallery.
+        </div>`);
+    },
+
+    fadeOutAlert: function () {
+        $(".alert").fadeOut(3000,"swing");
+    },
+
     bindEvents: function () {
         $(".separator").delegate(".btn", "click", function (event) {
             event.preventDefault();
 
             let mediaId = $(this).data("media_id");
             Gallery.addMediaToMyGallery(mediaId);
+            Gallery.showAlert();
+            Gallery.fadeOutAlert();
         });
     }
 };

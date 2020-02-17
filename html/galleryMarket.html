@@ -117,10 +117,20 @@ body {margin-top:70px;}
     transition: all 0.2s ease-in-out 0.1s;
 }
 
+.alert {
+  position: fixed;
+  margin: auto;
+  top: 1px;
+  right: 110px;
+  width:30%;
+  z-index:9999;
+  border-radius:5px;
+}
+
 </style>
 </head>
-<div>
 
+<div>
   <nav class="navbar navbar-inverse hidden-xs">
     <div class="container-fluid">
       <a class="navbar-brand" href="personalGallery.html" id="cgvtElement">CGVT</a>
@@ -137,8 +147,10 @@ body {margin-top:70px;}
     </div>
   </nav>
 
+
 <input class="form-control" id="myInput" type="text" placeholder="Search for a Category..">
 <br>
+
 
   <div  class="separator">
 <div class="responsive">
@@ -238,6 +250,7 @@ $(document).ready(function(){
     });
   });
 });
+
 </script>
 
 <script src="../js/marketGallery.js"></script>

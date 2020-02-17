@@ -25,6 +25,8 @@ window.MyGallery = {
             data: JSON.stringify(request)
         }).done(function () {
             console.log("Deleted from Gallery");
+            location.reload();
+            $('#added-success').show();
         })
     },
 
@@ -35,7 +37,8 @@ window.MyGallery = {
                     <img src=${media.imageUrl} alt="" width="600" height="400">
                   </a>
                   <div class="desc">${media.description}</div>
-                  <button type="button" id="run" class="btn btn-light btn-sm btn-block">Run CV Code</button>
+                  <button type="button" id="run" class="
+                   btn-light btn-sm btn-block">Run CV Code</button>
                   <button type="button" id="delete" class="btn btn-danger btn-sm btn-block" data-media_id="${media.id}">Remove</button>
                 </div></div>`
     },
@@ -55,8 +58,10 @@ window.MyGallery = {
             let mediaId = $(this).data("media_id");
             MyGallery.deleteMediaFromMyGallery(mediaId);
         });
-    }
+    },
+
 };
 
 MyGallery.getMyGallery();
 MyGallery.bindEvents();
+
